@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panduan Tata Cara Sholat </title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html { font-family: Arial, sans-serif; min-height: 100vh; }
+
+    /* === Home Page === */
+    .home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: url('Muhammadiyah.jpeg') repeat; /* ganti dengan background kamu */
+      padding: 2rem;
+      text-align: center;
+    }
+    .home-content {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 2rem 3rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .home h1 {
+      color: #1aa815;
+      margin-bottom: 1rem;
+    }
+    .home h2 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .home p {
+      margin-bottom: 0.3rem;
+    }
+    .start-btn {
+      background: #1aa815;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    .start-btn:hover {
+      background: #0047cc;
+    }
+    .footer {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* === Panduan Page === */
+    .panduan {
+      display: none;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #0026ff;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    header p { margin-top: 0.5rem; font-size: 0.9rem; }
+    main { display: flex; flex: 1; }
+    .sidebar { width: 250px; background: #f8f8f8; padding: 1rem; overflow-y: auto; }
+    .sidebar h2 { margin-bottom: 1rem; }
+    .sidebar ul { list-style: none; }
+    .sidebar li {
+      display: flex; flex-direction: column; align-items: center;
+      margin-bottom: 1rem; cursor: pointer;
+      border: 1px solid #ddd; border-radius: 8px; padding: 0.5rem;
+      transition: background 0.2s;
+    }
+    .sidebar li:hover { background: #eee; }
+    .sidebar img { width: 100px; margin-bottom: 0.5rem; }
+    .content { flex: 1; padding: 2rem; text-align: center; }
+    .image-container { margin: 1rem auto; max-width: 640px; }
+    .image-container img {
+      width: 35%; border: 1px solid #ccc; border-radius: 8px;
+    }
+    audio { margin-top: 1rem; }
+    .bacaan {
+      margin-top: 1rem; text-align: left; max-width: 640px; margin-left: auto; margin-right: auto;
+      background: #f9f9f9; padding: 1rem; border-radius: 8px;
+    }
+    .bacaan h3 { margin-bottom: 0.5rem; }
+    .controls { margin-top: 1rem; }
+    button.nav-btn {
+      background: #28a745; border: none; color: #fff; padding: 0.6rem 1rem;
+      border-radius: 5px; cursor: pointer; margin: 0 0.5rem;
+    }
+    button.nav-btn:hover { background: #218838; }
+  </style>
+</head>
+<body>
+  <!-- HOME PAGE -->
+  <div class="home" id="home">
+    <div class="home-content">
+      <h1>🕌 Tata Cara Sholat Sesuai HPT Muhammadiyah</h1>
+      <h2>Nama Kelompok</h2>
+      <p>Adli Nabil Mubarok</p>
+      <p>Muhammad Arifin</p>
+      <p>Bagas Habib Waliyudin</p>
+      <p>Aldi Eka Saputra</p>
+      <p>Muhammad Zidan</p>
+      <h2>Dosen Pengampu</h2>
+      <p>Dedy Suryadi, S.Pd, M.Pd</p>
+      <button class="start-btn" onclick="showPage()">Sholat (Laki-laki)</button>
+    </div>
+  </div>
+
+  <!-- PANDUAN PAGE -->
+  <div class="panduan" id="panduan">
+    <header>
+      <h1>🕌 Tata Cara Sholat Sesuai HPT Muhammadiyah</h1>
+      <p>Dosen Pengampu: Dedy Suryadi, S.Pd, M.Pd</p>
+      <p>Kelompok: Adli Nabil Mubarok, Muhammad Arifin, Bagas Habib Waliyudin, Aldi Eka Saputra, Muhammad Zidan</p>
+    </header>
+    <main>
+      <aside class="sidebar">
+        <h2>Gerakan Sholat</h2>
+        <ul>
+          <li onclick="showStep(0)">
+            <img src="takbiratulikhram.jpeg" alt="Takbiratul Ihram" />
+            <span>Takbiratul Ihram</span>
+          </li>
+          <li onclick="showStep(1)">
+            <img src="bersedekap.jpeg" alt="Bersedekap" />
+            <span>Bersedekap</span>
+          </li>
+          <li onclick="showStep(2)">
+            <img src="rukuk.png" alt="Rukuk" />
+            <span>Rukuk</span>
+          </li>
+          <li onclick="showStep(3)">
+            <img src="itidal.jpeg" alt="I'tidal" />
+            <span>I'tidal</span>
+          </li>
+          <li onclick="showStep(4)">
+            <img src="sujud.png" alt="Sujud" />
+            <span>Sujud</span>
+          </li>
+          <li onclick="showStep(5)">
+            <img src="duduk di antara dua sujud.jpeg" alt="Duduk di antara dua sujud" />
+            <span>Duduk di antara dua sujud</span>
+          </li>
+          <li onclick="showStep(6)">
+            <img src="tasyahud awal.jpeg" alt="Tasyahud Awal" />
+            <span>Tasyahud Awal</span>
+          </li>
+          <li onclick="showStep(7)">
+            <img src="Tasyahud akhir.jpeg" alt="Tasyahud Akhir" />
+            <span>Tasyahud Akhir</span>
+          </li>
+          <li onclick="showStep(8)">
+            <img src="salam.jpeg" alt="Salam" />
+            <span>Salam</span>
+          </li>
+        </ul>
+      </aside>
+      <section class="content">
+        <h2 id="step-title">Selamat Datang di Panduan Sholat</h2>
+        <p id="step-desc">Silakan pilih gerakan sholat di samping untuk melihat gambar, mendengar bacaan, dan mempelajari tata cara sesuai sunnah.</p>
+        <div class="image-container">
+          <img id="step-image" src="" alt="Gambar Gerakan Sholat">
+        </div>
+        <audio id="step-audio" controls>
+          <source src="" type="audio/mpeg">
+          Browser Anda tidak mendukung audio.
+        </audio>
+        <div class="bacaan">
+          <h3>Bacaan Arab:</h3>
+          <p id="step-arab">-</p>
+          <h3>Bacaan Latin:</h3>
+          <p id="step-latin">-</p>
+          <h3>Artinya:</h3>
+          <p id="step-arti">-</p>
+        </div>
+        <div class="controls">
+          <button class="nav-btn" onclick="prevStep()">⏮️ Sebelumnya</button>
+          <button class="nav-btn" onclick="nextStep()">⏭️ Selanjutnya</button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      &copy; 2025 Panduan Sholat - HPT Muhammadiyah 
+    </footer>
+  </div>
+
+  <script>
+    const steps = [
+      { title: "Takbiratul Ihram", image: "takbiratulikhram.jpeg", audio: "Takbiratul Ihram.mp3", desc: "Gerakan pertama: Takbiratul Ihram.", arab: "اللّهُ أَكْبَرُ", latin: "Allahu Akbar", arti: "Allah Maha Besar" },
+
+      { title: "Bersedekap", image: "bersedekap.jpeg", audio: "Bersedekap.mp3", desc: "Gerakan kedua: Bersedekap.", arab: "Doa Iftitah : اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَكَمَا بَاعَدْتَ بَيْنَ المَشْرِقِ وَالمَغْرِبِاللَّهُمَّ نَقِّنِي مِنَ الخَطَايَا ، كَمَا يُنَقَّى الثَّوْبُ الأَبْيَضُ مِنَالدَّنَسِ ، اللَّهُمَّ اغْسِلْ خَطَايَايَ بِالْمَاءِ ، وَالثَّلْجِ ، وَالبَرَدِ", latin: "Allahumma baaid baynii wa bayna khotoyaaya kamaa baa’adta baynal masyriqi wal maghrib. Allahumma naqqinii min khotoyaaya kamaa yunaqqots tsaubul abyadhu minad danas. Allahummagh-silnii min khotoyaaya bil maa-iwats tsalji wal barod.", arti: " Wahai Allah jauhkanlah antara aku dan kesalahan-kesalahanku sebagaimana engkau jauhkan antara timur dan barat, ya Allah bersihkanlah aku dari kesalahan sebagaimana bersihnya baju putih dari kotoran, ya Allah basuhlah kesalahan-kesalahanku dengan air, salju dan air dingin." },
+
+      { title: "Rukuk", image: "rukuk.png", audio: "rukuk.mp3", desc: "Gerakan ketiga: Rukuk.", arab: "سُبْحَانَكَ اللّهم رَبَّنَا وَبِحَمْدِكَ اللّهم اغْفِرْلِيْ", latin: "Subhaanakallaahumma rabbanaa wabihamdika Allaahummagh firlii", arti: "Maha Suci Tuhanku Yang Maha Agung" },
+
+      { title: "I'tidal", image: "itidal.jpeg", audio: "I'tidal.mp3", desc: "Gerakan keempat: I'tidal.", arab: "رَبَّنَا وَلَكَ الْحَمْدُ", latin: "Rabbanaa wa lakal hamd", arti: "Ya Tuhanku, segala puji itu bagi engkau" },
+
+      { title: "Sujud", image: "sujud.png", audio: "Sujud.mp3", desc: "Gerakan kelima: Sujud.", arab: " سُبْحَانَكَ اللهُمَّ رَبَّنَا وَبِحَمْدِكَ اللهُمَّ اغْفِرْلِيْ ", latin: "Subhaanakallah humma rabbanaa wa bihamdikallahummaghfirlii", arti: "Maha suci Engkau, Ya Allah, dan dengan memuji kepada Engkau, Ya Allah, aku memohon ampun" },
+
+      { title: "Duduk di antara dua sujud", image: "duduk di antara dua sujud.jpeg", audio: "Duduk di antara dua sujud.mp3", desc: "Gerakan keenam: Duduk di antara dua sujud.", arab: "اَللّهُمَ اغْفِرْلِيْ وارْحَمنِيْ وَاجْبُرْنِيْ وَاهْدِنِيْ وَارْزُقْنِيْ", latin: "Allaahummaghfirlii warhamnii wajburnii wahdinii warzuqnii", arti: "Ya Allah, ampunilah aku, belas kasihanilah aku, cukupilah aku, tunjukilah aku dan berikanlah rezeki kepadaku" },
+
+      { title: "Tasyahud Awal", image: "tasyahud awal.jpeg", audio: "Tasyahud Awal.mp3", desc: "Gerakan ketujuh: Tasyahud Awal.", arab: "اَلتَّحِيَّاتُ لِلّهِ وَالصَّلَوَاتُ وَالطَّيِّباَتُ. اَلسَّلاَمُ عَلَيْكَ أَيُّهاَ النَّبِيُّوَرَحْمَةُ اللهِ وَبَرَكاَتُهُ. اَلسَّلاَمُ عَلَيْناَ وَعَلَى عِباَدِاللهِ الصَّالِحِيْنَأَشْهَدُ اَنْ لاَاِلَهَ اِلاَّ اللهِ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُوْلُهُ للَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ ، وَعَلَى آلِ مُحَمَّدٍ ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِيدٌ ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ ، وَعَلَى آلِ مُحَمَّدٍ ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ ، وَعَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِيدٌ", latin: "Attahiyyaatu lillaahi washsholawaatu waththoyyibaat. Assalaamu ‘alaika ayyuhannabiyyu warohmatullaahi wabarokaatuh. Assalaamu’alainaa wa’ala‘ibaadillaahi shshoolihiin. Asyhadu anlaa ilaaha illallaah waasyhadu annamuhammadan ‘abduhu warosuuluh Allahumma sholli ‘ala Muhammad wa ‘ala aali Muhammad", arti: "Segala kehormatan, kebahagiaan dan kebagusan adalah kepunyaan Allah, Semoga keselamatan bagi Engkau, ya Nabi Muhammad, beserta rahmat dan kebahagiaan Allah. Mudah-mudahan keselamatan juga bagi kita sekalian dan hamba-hamba Allah yang baik-baik. Aku bersaksi bahwa tiada Tuhan melainkan Allah dan aku bersaksi bahwa Muhammad itu hamba Allah dan utusan-Nyautusan-Nya. Ya Allah, semoga shalawat tercurah kepada Muhammad dan keluarga Muhammad" },
+
+      { title: "Tasyahud Akhir", image: "Tasyahud akhir.jpeg", audio: "Tasyahud Akhir.mp3", desc: "Gerakan kedelapan: Tasyahud Akhir.", arab: "اَلتَّحِيَّاتُ لِلّهِ وَالصَّلَوَاتُ وَالطَّيِّباَتُ. اَلسَّلاَمُ عَلَيْكَ أَيُّهاَ النَّبِيُّوَرَحْمَةُ اللهِ وَبَرَكاَتُهُ. اَلسَّلاَمُ عَلَيْناَ وَعَلَى عِباَدِاللهِ الصَّالِحِيْنَأَشْهَدُ اَنْ لاَاِلَهَ اِلاَّ اللهِ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُوْلُهُللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ ، وَعَلَى آلِ مُحَمَّدٍ ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِيدٌ ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ ، وَعَلَى آلِ مُحَمَّدٍ ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ ، وَعَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِيدٌاَللَّهُمَّ إِنِّيْ أَعُوْذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ وَمِنْ عَذَابِ الْقَبْرِ وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ وَمِنْ شَرِّفِتْنَةِ الْمَسِيْحِ الدَّجَّالِ" ,latin: "Attahiyyaatu lillaahi washsholawaatu waththoyyibaat. Assalaamu ‘alaika ayyuhannabiyyu warohmatullaahi wabarokaatuh. Assalaamu’alainaa wa’ala ‘ibaadillaahi shshoolihiin. Asyhadu anlaa ilaaha illallaah waasyhadu annamuhammadan ‘abduhu warosuuluh Allahumma sholli ‘ala Muhammad wa ‘ala aali Muhammad kamaa shollaita ‘ala Ibroohim wa ‘ala aali Ibrohim, innaka hamidun majiid. Allahumma baarik ‘ala Muhammad wa ‘ala aali Muhammad kamaa baarokta ‘ala Ibrohim wa ‘ala aali Ibrohimm innaka hamidun majiid Allaahumma inni a’uudzubika min ‘adzaabil qabri wa min ‘adzaabinnaari jahannama wa min fitnatil mahyaa wal mamaati wa min fitnatil masiihid dajjaal.", arti: "Segala kehormatan, kebahagiaan dan kebagusan adalah kepunyaan Allah, Semoga keselamatan bagi Engkau, ya Nabi Muhammad, beserta rahmat dan kebahagiaan Allah. Mudah-mudahan keselamatan juga bagi kita sekalian dan hamba-hamba Allah yang baik-baik. Aku bersaksi bahwa tiada Tuhan melainkan Allah dan aku bersaksi bahwa Muhammad itu hamba Allah dan utusan-Nyautusan-Nya,Ya Allah, semoga shalawat tercurah kepada Muhammad dan keluarga Muhammad. Seperti rahmat yang tercurah pada Ibrahim dan keluarga Ibrahim. Dan limpahilah berkah atas Nabi Muhammad beserta para keluarganya. Seperti berkah yang Engkau berikan kepada Nabi Ibrahim dan keluarganya. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia di seluruh alam, Ya Allah, sesungguhnya aku berlindung kepadaMu dari adzab Jahannam, dari adzab kubur, dari fitnah kehidupan dan kematian, dan dari keburukan fitnah Dajjal." },
+
+      { title: "Salam", image: "salam.jpeg", audio: "salam.mp3", desc: "Gerakan kesembilan: Salam.", arab: " السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ ", latin: "As-salāmu ‘alaikum wa raḥmatullāh", arti: "Semoga keselamatan dan rahmat Allah tercurah untukmu" }
+    ];
+    let currentStep = -1;
+    function showStep(index) {
+      currentStep = index;
+      const step = steps[index];
+      document.getElementById('step-title').innerText = step.title;
+      document.getElementById('step-desc').innerText = step.desc;
+      document.getElementById('step-image').src = step.image;
+      document.getElementById('step-audio').src = step.audio;
+      document.getElementById('step-arab').innerText = step.arab;
+      document.getElementById('step-latin').innerText = step.latin;
+      document.getElementById('step-arti').innerText = step.arti;
+      document.getElementById('step-audio').load();
+    }
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        showStep(currentStep + 1);
+      } else {
+        alert("Anda sudah di gerakan terakhir.");
+      }
+    }
+    function prevStep() {
+      if (currentStep > 0) {
+        showStep(currentStep - 1);
+      } else {
+        alert("Anda sudah di gerakan pertama.");
+      }
+    }
+    function showPage() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('panduan').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
